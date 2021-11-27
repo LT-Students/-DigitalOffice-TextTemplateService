@@ -25,7 +25,6 @@ namespace LT.DigitalOffice.TextTemplateService
 {
   public class Startup : BaseApiInfo
   {
-
     public const string CorsPolicyName = "LtDoCorsPolicy";
 
     private readonly RabbitMqConfig _rabbitMqConfig;
@@ -104,7 +103,6 @@ namespace LT.DigitalOffice.TextTemplateService
         Log.Information($"SQL connection string from environment was used. Value '{HidePasswordHelper.HidePassword(connStr)}'.");
       }
 
-
       services.AddDbContext<TextTemplateServiceDbContext>(options =>
       {
         options.UseSqlServer(connStr);
@@ -168,7 +166,6 @@ namespace LT.DigitalOffice.TextTemplateService
         });
       });
     }
-
 
     #endregion
 
