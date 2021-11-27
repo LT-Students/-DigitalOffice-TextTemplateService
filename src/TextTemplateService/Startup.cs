@@ -206,7 +206,6 @@ namespace LT.DigitalOffice.TextTemplateService
 
       services.AddMassTransit(x =>
       {
-
         x.UsingRabbitMq((context, cfg) =>
         {
           cfg.Host(_rabbitMqConfig.Host, "/", host =>
@@ -214,7 +213,6 @@ namespace LT.DigitalOffice.TextTemplateService
             host.Username(username);
             host.Password(password);
           });
-
         });
 
         x.AddRequestClients(_rabbitMqConfig);

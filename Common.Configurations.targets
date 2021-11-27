@@ -3,7 +3,6 @@
 <Project>
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
-
 		<AssemblyName>LT.DigitalOffice.$(MSBuildProjectName)</AssemblyName>
 		<RootNamespace>LT.DigitalOffice.$(MSBuildProjectName)</RootNamespace>
 	</PropertyGroup>
