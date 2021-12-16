@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Threading.Tasks;
-using LT.DigitalOffice.Kernel.Responses;
 using LT.DigitalOffice.TextTemplateService.Business.Commands.EmailTemplate.Interfaces;
 using LT.DigitalOffice.TextTemplateService.Models.Dto.Models;
 using LT.DigitalOffice.TextTemplateService.Models.Dto.Requests.EmailTemplate;
+using LT.DigitalOffice.Kernel.Responses;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
 
 namespace LT.DigitalOffice.TextTemplateService.Controllers
 {
+  [Route("[controller]")]
   [ApiController]
-  [Route("Controller")]
   public class EmailTemplateController : ControllerBase
   {
     [HttpPost("create")]
