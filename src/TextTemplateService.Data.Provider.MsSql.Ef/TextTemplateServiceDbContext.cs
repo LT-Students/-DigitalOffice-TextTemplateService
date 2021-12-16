@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LT.DigitalOffice.TextTemplateService.Models.Db;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using System.Threading.Tasks;
 
@@ -6,6 +7,10 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef
 {
   public class TextTemplateServiceDbContext : DbContext, IDataProvider
   {
+    public DbSet<DbEmailTemplate> EmailTemplates { get; set; }
+    public DbSet<DbEmailTemplateText> EmailTemplateTexts { get; set; }
+    public DbSet<DbKeyword> ParseEntities { get; set; }
+
     public TextTemplateServiceDbContext(DbContextOptions<TextTemplateServiceDbContext> options)
     : base(options)
     {

@@ -33,6 +33,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextTemplateService.Models.Dto", "src\TextTemplateService.Models.Dto\TextTemplateService.Models.Dto.csproj", "{0E62C65A-B5D2-459A-B234-C996408B8B5F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextTemplateService.Validation", "src\TextTemplateService.Validation\TextTemplateService.Validation.csproj", "{C162D4D5-93C6-4DAD-A8E5-BE19F651977F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ACAC3F93-7BA7-497D-94DB-79E1CAB36A31} = {ACAC3F93-7BA7-497D-94DB-79E1CAB36A31}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextTemplateService", "src\TextTemplateService\TextTemplateService.csproj", "{0ACA8A18-4418-427B-8899-527E325B0EB4}"
 EndProject
