@@ -11,6 +11,6 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider
   {
     DbSet<DbEmailTemplate> EmailTemplates { get; set; }
     DbSet<DbEmailTemplateText> EmailTemplateTexts { get; set; }
-    DbSet<DbKeyword> ParseEntities { get; set; }
+    DbSet<DbKeyword> Keywords { get; set; }
   }
 }

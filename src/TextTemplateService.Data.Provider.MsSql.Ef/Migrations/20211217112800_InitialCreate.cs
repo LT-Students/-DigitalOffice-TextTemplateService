@@ -49,15 +49,13 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
         columns: table => new
         {
           Id = table.Column<Guid>(nullable: false),
-          Keyword = table.Column<string>(nullable: false, maxLength: 50),
-          ServiceName = table.Column<int>(nullable: false),
+          Service = table.Column<int>(nullable: false),
           EntityName = table.Column<string>(nullable: false),
-          PropertyName = table.Column<string>(nullable: false)
+          Keyword = table.Column<string>(nullable: false) 
         },
         constraints: table =>
         {
           table.PrimaryKey("PK_Keyword", p => p.Id);
-          table.UniqueConstraint("UC_Keyword", p => p.Keyword);
         });
     }
 

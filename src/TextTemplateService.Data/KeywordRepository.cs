@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LT.DigitalOffice.Kernel.Requests;
 using LT.DigitalOffice.TextTemplateService.Data.Interfaces;
 using LT.DigitalOffice.TextTemplateService.Data.Provider;
 using LT.DigitalOffice.TextTemplateService.Models.Db;
@@ -19,53 +17,31 @@ namespace LT.DigitalOffice.TextTemplateService.Data
       _provider = provider;
     }
 
-    public async Task<Guid?> CreateAsync(DbKeyword request)
+    public async Task CreateAsync(List<DbKeyword> dbKeywords, int service)
     {
-      if (request == null)
+      if (dbKeywords is null || !dbKeywords.Any())
       {
-        return null;
+        return;
       }
 
-      _provider.ParseEntities.Add(request);
-      await _provider.SaveAsync();
+      IQueryable<DbKeyword> serviceKeywords = _provider.Keywords.Where(k => k.Service == service);
 
-      return request.Id;
-    }
-
-    public async Task<DbKeyword> GetAsync(Guid entityId)
-    {
-      return await _provider.ParseEntities.FirstOrDefaultAsync(pe => pe.Id == entityId);
-    }
-
-    public async Task<bool> DoesKeywordExistAsync(string keyword)
-    {
-      return await _provider.ParseEntities.AnyAsync(pe => pe.Keyword == keyword);
-    }
-
-    public async Task<(List<DbKeyword> dbKeywords, int totalCount)> FindAsync(BaseFindFilter filter)
-    {
-      return (
-        await _provider.ParseEntities
-          .Skip(filter.SkipCount)
-          .Take(filter.TakeCount)
-          .ToListAsync(),
-        await _provider.ParseEntities.CountAsync());
-    }
-
-    public async Task<bool> RemoveAsync(Guid entityId)
-    {
-      DbKeyword dbKeyword = await _provider.ParseEntities
-        .FirstOrDefaultAsync(pe => pe.Id == entityId);
-
-      if (dbKeyword == null)
+      foreach (DbKeyword dbKeyword in dbKeywords)
       {
-        return false;
+        if (!serviceKeywords.Any(k => k.EntityName == dbKeyword.EntityName && k.Keyword == dbKeyword.Keyword))
+        {
+          _provider.Keywords.Add(dbKeyword);
+        }
       }
 
-      _provider.ParseEntities.Remove(dbKeyword);
       await _provider.SaveAsync();
+    }
 
-      return true;
+    public async Task<List<DbKeyword>> GetAsync(int service)
+    {
+      return await _provider.Keywords
+        .Where(k => k.Service == service)
+        .ToListAsync();
     }
   }
 }

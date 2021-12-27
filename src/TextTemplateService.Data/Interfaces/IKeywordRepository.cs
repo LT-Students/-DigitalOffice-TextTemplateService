@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using LT.DigitalOffice.Kernel.Attributes;
-using LT.DigitalOffice.Kernel.Requests;
 using LT.DigitalOffice.TextTemplateService.Models.Db;
 
 namespace LT.DigitalOffice.TextTemplateService.Data.Interfaces
@@ -10,14 +8,8 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Interfaces
   [AutoInject]
   public interface IKeywordRepository
   {
-    Task<Guid?> CreateAsync(DbKeyword request);
+    Task CreateAsync(List<DbKeyword> dbKeywords, int service);
 
-    Task<DbKeyword> GetAsync(Guid entityId);
-
-    Task<(List<DbKeyword> dbKeywords, int totalCount)> FindAsync(BaseFindFilter filter);
-
-    Task<bool> RemoveAsync(Guid entityId);
-
-    Task<bool> DoesKeywordExistAsync(string keyword);
+    Task<List<DbKeyword>> GetAsync(int service);
   }
 }

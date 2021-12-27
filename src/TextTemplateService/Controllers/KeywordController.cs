@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using LT.DigitalOffice.Kernel.Requests;
 using LT.DigitalOffice.Kernel.Responses;
+using LT.DigitalOffice.Models.Broker.Enums;
 using LT.DigitalOffice.TextTemplateService.Business.Commands.ParseEntity.Interfaces;
 using LT.DigitalOffice.TextTemplateService.Models.Dto.Models;
-using LT.DigitalOffice.TextTemplateService.Models.Dto.Requests.ParseEntity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LT.DigitalOffice.TextTemplateService.Controllers
@@ -24,18 +23,10 @@ namespace LT.DigitalOffice.TextTemplateService.Controllers
 
     [HttpGet("Find")]
     public async Task<FindResultResponse<KeywordInfo>> FindAsync(
-      [FromServices] IFindKeywordCommand command,
-      [FromQuery] BaseFindFilter filter)
+      [FromServices] IFindServiceKeywordsCommand command,
+      [FromQuery] SourceKeywords service)
     {
-      return await command.ExecuteAsync(filter);
-    }
-
-    [HttpPost("Create")]
-    public async Task<OperationResultResponse<Guid?>> CreateAsync(
-      [FromServices] ICreateKeywordCommand command,
-      [FromBody] CreateKeywordRequest request)
-    {
-      return await command.ExecuteAsync(request);
+      return await command.ExecuteAsync(service);
     }
   }
 }

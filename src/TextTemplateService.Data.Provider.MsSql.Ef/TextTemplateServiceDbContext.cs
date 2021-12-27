@@ -9,7 +9,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef
   {
     public DbSet<DbEmailTemplate> EmailTemplates { get; set; }
     public DbSet<DbEmailTemplateText> EmailTemplateTexts { get; set; }
-    public DbSet<DbKeyword> ParseEntities { get; set; }
+    public DbSet<DbKeyword> Keywords { get; set; }
 
     public TextTemplateServiceDbContext(DbContextOptions<TextTemplateServiceDbContext> options)
     : base(options)

@@ -9,10 +9,9 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Db
     public const string TableName = "Keywords";
 
     public Guid Id { get; set; }
-    public string Keyword { get; set; }
-    public int ServiceName { get; set; }
+    public int Service { get; set; }
     public string EntityName { get; set; }
-    public string PropertyName { get; set; }
+    public string Keyword { get; set; }
   }
 
   public class DbParseEntityConfiguration : IEntityTypeConfiguration<DbKeyword>
@@ -31,10 +30,6 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Db
 
       builder
         .Property(pe => pe.EntityName)
-        .IsRequired();
-
-      builder
-        .Property(pe => pe.PropertyName)
         .IsRequired();
     }
   }
