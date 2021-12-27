@@ -18,7 +18,7 @@ namespace LT.DigitalOffice.TextTemplateService.Validation.Validators.Template
         .NotEmpty().WithMessage("Email template texts must not be empty.");
 
       RuleForEach(et => et.TemplateTexts)
-        .Must(ett => ett != null).WithMessage("Email template text must not be null.")
+        .NotNull().WithMessage("Email template text must not be null.")
         .ChildRules(ett =>
         {
           ett.RuleFor(ett => ett.Subject)
