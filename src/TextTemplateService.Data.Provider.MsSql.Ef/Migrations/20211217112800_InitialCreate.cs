@@ -12,7 +12,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
     protected override void Up(MigrationBuilder builder)
     {
       builder.CreateTable(
-        name: DbEmailTemplate.TableName,
+        name: DbTemplate.TableName,
         columns: table => new
         {
           Id = table.Column<Guid>(nullable: false),
@@ -26,22 +26,22 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
         },
         constraints: table =>
         {
-          table.PrimaryKey($"PK_{DbEmailTemplate.TableName}", x => x.Id);
+          table.PrimaryKey($"PK_{DbTemplate.TableName}", x => x.Id);
         });
 
       builder.CreateTable(
-        name: DbEmailTemplateText.TableName,
+        name: DbTemplateText.TableName,
         columns: table => new
         {
           Id = table.Column<Guid>(nullable: false),
-          EmailTemplateId = table.Column<Guid>(nullable: false),
+          TemplateId = table.Column<Guid>(nullable: false),
           Subject = table.Column<string>(nullable: false),
           Text = table.Column<string>(nullable: false),
           Language = table.Column<string>(nullable: false, maxLength: 2)
         },
         constraints: table =>
         {
-          table.PrimaryKey($"PK_{DbEmailTemplateText.TableName}", x => x.Id);
+          table.PrimaryKey($"PK_{DbTemplateText.TableName}", x => x.Id);
         });
 
       builder.CreateTable(
@@ -55,17 +55,17 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
         },
         constraints: table =>
         {
-          table.PrimaryKey("PK_Keyword", p => p.Id);
+          table.PrimaryKey($"PK_{DbKeyword.TableName}", p => p.Id);
         });
     }
 
     protected override void Down(MigrationBuilder builder)
     {
       builder.DropTable(
-        name: DbEmailTemplate.TableName);
+        name: DbTemplate.TableName);
 
       builder.DropTable(
-        name: DbEmailTemplateText.TableName);
+        name: DbTemplateText.TableName);
 
       builder.DropTable(
         name: DbKeyword.TableName);

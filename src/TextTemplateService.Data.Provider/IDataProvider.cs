@@ -9,8 +9,8 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider
   [AutoInject(InjectType.Scoped)]
   public interface IDataProvider : IBaseDataProvider
   {
-    DbSet<DbEmailTemplate> EmailTemplates { get; set; }
-    DbSet<DbEmailTemplateText> EmailTemplateTexts { get; set; }
+    DbSet<DbTemplate> Templates { get; set; }
+    DbSet<DbTemplateText> TemplateTexts { get; set; }
     DbSet<DbKeyword> Keywords { get; set; }
   }
 }
