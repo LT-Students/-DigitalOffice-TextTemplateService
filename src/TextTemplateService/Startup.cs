@@ -10,6 +10,7 @@ using LT.DigitalOffice.Kernel.Extensions;
 using LT.DigitalOffice.Kernel.Helpers;
 using LT.DigitalOffice.Kernel.Middlewares.ApiInformation;
 using LT.DigitalOffice.Kernel.RedisSupport.Configurations;
+using LT.DigitalOffice.TextTemplateService.Broker.Consumers;
 using LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef;
 using LT.DigitalOffice.TextTemplateService.Models.Dto.Configuration;
 using MassTransit;
@@ -212,7 +213,14 @@ namespace LT.DigitalOffice.TextTemplateService
             host.Username(username);
             host.Password(password);
           });
+
+          cfg.ReceiveEndpoint(_rabbitMqConfig.CreateKeywordsEndpoint, ep =>
+          {
+            ep.ConfigureConsumer<CreateKeywordsConsumer>(context);
+          });
         });
+
+        x.AddConsumer<CreateKeywordsConsumer>();
 
         x.AddRequestClients(_rabbitMqConfig);
       });

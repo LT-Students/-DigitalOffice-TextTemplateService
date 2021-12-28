@@ -3,10 +3,6 @@
   <Import Project="$(ProjectDir)..\..\Common.Configurations.targets" />
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\TextTemplateService.Data.Provider.MsSql.Ef\TextTemplateService.Data.Provider.MsSql.Ef.csproj" />
     <ProjectReference Include="..\TextTemplateService.Data.Provider\TextTemplateService.Data.Provider.csproj" />
     <ProjectReference Include="..\TextTemplateService.Models.Db\TextTemplateService.Models.Db.csproj" />

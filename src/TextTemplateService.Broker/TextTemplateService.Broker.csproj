@@ -3,10 +3,6 @@
   <Import Project="$(ProjectDir)..\..\Common.Configurations.targets" />
 
   <ItemGroup>
-    <Folder Include="Consumers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\TextTemplateService.Data\TextTemplateService.Data.csproj" />
     <ProjectReference Include="..\TextTemplateService.Mappers\TextTemplateService.Mappers.csproj" />
   </ItemGroup>
