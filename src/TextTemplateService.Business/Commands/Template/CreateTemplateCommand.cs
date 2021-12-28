@@ -20,7 +20,7 @@ namespace LT.DigitalOffice.TextTemplateService.Business.Commands.Template
   public class CreateTemplateCommand : ICreateTemplateCommand
   {
     private readonly IAccessValidator _accessValidator;
-    private readonly ICreateEmailTemplateValidator _validator;
+    private readonly ICreateTemplateValidator _validator;
     private readonly IDbTemplateMapper _mapper;
     private readonly ITemplateRepository _repository;
     private readonly IHttpContextAccessor _httpContextAccessor;
@@ -28,7 +28,7 @@ namespace LT.DigitalOffice.TextTemplateService.Business.Commands.Template
 
     public CreateTemplateCommand(
       IAccessValidator accessValidator,
-      ICreateEmailTemplateValidator validator,
+      ICreateTemplateValidator validator,
       IDbTemplateMapper mapper,
       ITemplateRepository repository,
       IHttpContextAccessor httpContextAccessor,

@@ -44,12 +44,12 @@ namespace LT.DigitalOffice.TextTemplateService.Business.Commands.Template
           errors);
       }
 
-      (List<DbTemplate> dbEmailTempates, int totalCount) repositoryResponse =
+      (List<DbTemplate> dbTempates, int totalCount) repositoryResponse =
         await _repository.FindAsync(filter);
 
       return new()
       {
-        Body = repositoryResponse.dbEmailTempates?.Select(_mapper.Map).ToList(),
+        Body = repositoryResponse.dbTempates?.Select(_mapper.Map).ToList(),
         TotalCount = repositoryResponse.totalCount,
         Status = OperationResultStatusType.FullSuccess
       };

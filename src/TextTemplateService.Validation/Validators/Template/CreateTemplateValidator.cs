@@ -4,7 +4,7 @@ using LT.DigitalOffice.TextTemplateService.Validation.Validators.Template.Interf
 
 namespace LT.DigitalOffice.TextTemplateService.Validation.Validators.Template
 {
-  public class CreateTemplateValidator : AbstractValidator<TemplateRequest>, ICreateEmailTemplateValidator
+  public class CreateTemplateValidator : AbstractValidator<TemplateRequest>, ICreateTemplateValidator
   {
     public CreateTemplateValidator()
     {
