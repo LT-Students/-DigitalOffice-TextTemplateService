@@ -7,6 +7,6 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Models.Interfaces
   [AutoInject]
   public interface ITemplateTextInfoMapper
   {
-    TemplateTextInfo Map(DbTemplateText dbEmailTemplateText);
+    TemplateTextInfo Map(DbTextTemplate dbEmailTemplateText);
   }
 }

@@ -38,7 +38,7 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Db
         IsActive = true,
         CreatedAtUtc = DateTime.UtcNow,
         CreatedBy = _httpContextAccessor.HttpContext.GetUserId(),
-        TemplateTexts = request.TemplateTexts
+        TextTemplates = request.TemplateTexts
           .Select(x => _dbEmailTemplateTextMapper.Map(x, templateId))
           .ToList()
       };

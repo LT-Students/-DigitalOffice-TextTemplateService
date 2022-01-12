@@ -6,7 +6,7 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Models
 {
   public class TemplateTextInfoMapper : ITemplateTextInfoMapper
   {
-    public TemplateTextInfo Map(DbTemplateText dbEmailTemplateText)
+    public TemplateTextInfo Map(DbTextTemplate dbEmailTemplateText)
     {
       if (dbEmailTemplateText == null)
       {

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
 {
   [DbContext(typeof(TextTemplateServiceDbContext))]
-  [Migration("20211217112800_InitialCreate")]
+  [Migration("20220112121000_InitialCreate")]
   public class InitialTables : Migration
   {
     protected override void Up(MigrationBuilder builder)
@@ -30,18 +30,41 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
         });
 
       builder.CreateTable(
-        name: DbTemplateText.TableName,
+        name: DbTextTemplate.TableName,
         columns: table => new
         {
           Id = table.Column<Guid>(nullable: false),
           TemplateId = table.Column<Guid>(nullable: false),
           Subject = table.Column<string>(nullable: false),
           Text = table.Column<string>(nullable: false),
-          Language = table.Column<string>(nullable: false, maxLength: 2)
+          Language = table.Column<string>(nullable: false, maxLength: 2),
+          IsActive = table.Column<bool>(nullable: false),
+          CreatedBy = table.Column<Guid>(nullable: false),
+          CreatedAtUtc = table.Column<DateTime>(nullable: false),
+          ModifiedBy = table.Column<Guid>(nullable: true),
+          ModifiedAtUtc = table.Column<DateTime>(nullable: true)
         },
         constraints: table =>
         {
-          table.PrimaryKey($"PK_{DbTemplateText.TableName}", x => x.Id);
+          table.PrimaryKey($"PK_{DbTextTemplate.TableName}", x => x.Id);
+        });
+
+      builder.CreateTable(
+        name: DbEndpointTextTemplate.TableName,
+        columns: table => new
+        {
+          Id = table.Column<Guid>(nullable: false),
+          TextTemplateId = table.Column<Guid>(nullable: false),
+          EndpointId = table.Column<Guid>(nullable: false),
+          IsActive = table.Column<bool>(nullable: false),
+          CreatedBy = table.Column<Guid>(nullable: false),
+          CreatedAtUtc = table.Column<DateTime>(nullable: false),
+          ModifiedBy = table.Column<Guid>(nullable: true),
+          ModifiedAtUtc = table.Column<DateTime>(nullable: true)
+        },
+        constraints: table =>
+        {
+          table.PrimaryKey($"PK_{DbEndpointTextTemplate.TableName}", p => p.Id);
         });
 
       builder.CreateTable(
@@ -49,9 +72,8 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
         columns: table => new
         {
           Id = table.Column<Guid>(nullable: false),
-          Service = table.Column<int>(nullable: false),
-          EntityName = table.Column<string>(nullable: false),
-          Keyword = table.Column<string>(nullable: false) 
+          EndpointId = table.Column<Guid>(nullable: false),
+          Keyword = table.Column<string>(nullable: false)
         },
         constraints: table =>
         {
@@ -65,7 +87,10 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
         name: DbTemplate.TableName);
 
       builder.DropTable(
-        name: DbTemplateText.TableName);
+        name: DbTextTemplate.TableName);
+
+      builder.DropTable(
+        name: DbEndpointTextTemplate.TableName);
 
       builder.DropTable(
         name: DbKeyword.TableName);

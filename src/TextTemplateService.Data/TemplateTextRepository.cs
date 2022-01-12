@@ -17,27 +17,27 @@ namespace LT.DigitalOffice.TextTemplateService.Data
       _provider = provider;
     }
 
-    public async Task<Guid?> CreateAsync(DbTemplateText request)
+    public async Task<Guid?> CreateAsync(DbTextTemplate request)
     {
       if (request == null)
       {
         return null;
       }
 
-      _provider.TemplateTexts.Add(request);
+      _provider.TextTemplates.Add(request);
       await _provider.SaveAsync();
 
       return request.Id;
     }
 
-    public async Task<bool> EditAsync(Guid emailTemplateTextId, JsonPatchDocument<DbTemplateText> patch)
+    public async Task<bool> EditAsync(Guid emailTemplateTextId, JsonPatchDocument<DbTextTemplate> patch)
     {
       if (patch == null)
       {
         return false;
       }
 
-      DbTemplateText dbEmailTemplateText = await _provider.TemplateTexts
+      DbTextTemplate dbEmailTemplateText = await _provider.TextTemplates
         .FirstOrDefaultAsync(et => et.Id == emailTemplateTextId);
 
       if (dbEmailTemplateText == null)

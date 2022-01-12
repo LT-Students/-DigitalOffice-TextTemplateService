@@ -31,7 +31,7 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Models
         IsActive = dbEmailTemplate.IsActive,
         CreatedBy = dbEmailTemplate.CreatedBy,
         CreatedAtUtc = dbEmailTemplate.CreatedAtUtc,
-        Texts = dbEmailTemplate.TemplateTexts?
+        Texts = dbEmailTemplate.TextTemplates?
           .Select(_mapper.Map)
           .ToList()
       };

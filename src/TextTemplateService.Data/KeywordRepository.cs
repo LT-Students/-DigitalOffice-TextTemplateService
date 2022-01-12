@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LT.DigitalOffice.TextTemplateService.Data.Interfaces;
@@ -17,30 +18,30 @@ namespace LT.DigitalOffice.TextTemplateService.Data
       _provider = provider;
     }
 
-    public async Task CreateAsync(List<DbKeyword> dbKeywords, int service)
+    public async Task<bool> CreateAsync(List<DbKeyword> dbKeywords)
     {
       if (dbKeywords is null || !dbKeywords.Any())
       {
-        return;
+        return false;
       }
 
-      IQueryable<DbKeyword> serviceKeywords = _provider.Keywords.Where(k => k.Service == service);
-
-      foreach (DbKeyword dbKeyword in dbKeywords)
-      {
-        if (!serviceKeywords.Any(k => k.EntityName == dbKeyword.EntityName && k.Keyword == dbKeyword.Keyword))
-        {
-          _provider.Keywords.Add(dbKeyword);
-        }
-      }
-
+      _provider.Keywords.AddRange(dbKeywords);
       await _provider.SaveAsync();
+
+      return true;
     }
 
-    public async Task<List<DbKeyword>> GetAsync(int service)
+    public async Task<List<DbKeyword>> GetAsync(Guid endpointId)
     {
       return await _provider.Keywords
-        .Where(k => k.Service == service)
+        .Where(k => k.EndpointId == endpointId)
+        .ToListAsync();
+    }
+
+    public async Task<List<DbKeyword>> GetAsync(List<Guid> endpointsIds)
+    {
+      return await _provider.Keywords
+        .Where(k => endpointsIds.Contains(k.EndpointId))
         .ToListAsync();
     }
   }

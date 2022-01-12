@@ -9,8 +9,7 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Db
     public const string TableName = "Keywords";
 
     public Guid Id { get; set; }
-    public int Service { get; set; }
-    public string EntityName { get; set; }
+    public Guid EndpointId { get; set; }
     public string Keyword { get; set; }
   }
 
@@ -26,10 +25,6 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Db
 
       builder
         .Property(pe => pe.Keyword)
-        .IsRequired();
-
-      builder
-        .Property(pe => pe.EntityName)
         .IsRequired();
     }
   }
