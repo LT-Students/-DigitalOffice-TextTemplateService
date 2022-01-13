@@ -32,9 +32,9 @@ namespace LT.DigitalOffice.TextTemplateService.Broker.Consumers
           .Where(dbk => requestEndpointKeywords.EndpointId == dbk.EndpointId)
           .ToList();
 
-        newEndpointKeywords = savedEndpointKeywords.Any() ?
-          requestEndpointKeywords.Keywords.Where(k => !savedEndpointKeywords.Select(dbk => dbk.Keyword).Contains(k)).ToList() :
-          requestEndpointKeywords.Keywords;
+        newEndpointKeywords = savedEndpointKeywords.Any()
+          ? requestEndpointKeywords.Keywords.Where(k => !savedEndpointKeywords.Select(dbk => dbk.Keyword).Contains(k)).ToList()
+          : requestEndpointKeywords.Keywords;
         
         if (newEndpointKeywords.Any())
         {
