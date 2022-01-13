@@ -29,11 +29,11 @@ namespace LT.DigitalOffice.TextTemplateService.Broker.Consumers
       foreach (EndpointKeywords requestEndpointKeywords in request.EndpointsKeywords)
       {
         savedEndpointKeywords = dbKeywords
-          .Where(x => requestEndpointKeywords.EndpointId == x.EndpointId)
+          .Where(dbk => requestEndpointKeywords.EndpointId == dbk.EndpointId)
           .ToList();
 
         newEndpointKeywords = savedEndpointKeywords.Any() ?
-          requestEndpointKeywords.Keywords.Where(x => !savedEndpointKeywords.Select(i => i.Keyword).Contains(x)).ToList() :
+          requestEndpointKeywords.Keywords.Where(k => !savedEndpointKeywords.Select(dbk => dbk.Keyword).Contains(k)).ToList() :
           requestEndpointKeywords.Keywords;
         
         if (newEndpointKeywords.Any())
