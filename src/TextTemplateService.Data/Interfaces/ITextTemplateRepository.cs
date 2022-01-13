@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.JsonPatch;
 namespace LT.DigitalOffice.TextTemplateService.Data.Interfaces
 {
   [AutoInject]
-  public interface ITemplateTextRepository
+  public interface ITextTemplateRepository
   {
     Task<Guid?> CreateAsync(DbTextTemplate request);
 

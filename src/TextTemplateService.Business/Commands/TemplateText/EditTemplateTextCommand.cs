@@ -20,14 +20,14 @@ namespace LT.DigitalOffice.TextTemplateService.Business.Commands.TemplateText
   public class EditTemplateTextCommand : IEditTemplateTextCommand
   {
     private readonly IAccessValidator _accessValidator;
-    private readonly ITemplateTextRepository _repository;
+    private readonly ITextTemplateRepository _repository;
     private readonly IEditTemplateTextValidator _validator;
     private readonly IPatchDbTemplateTextMapper _mapper;
     private readonly IResponseCreator _responseCreator;
 
     public EditTemplateTextCommand(
       IAccessValidator accessValidator,
-      ITemplateTextRepository repository,
+      ITextTemplateRepository repository,
       IEditTemplateTextValidator validator,
       IPatchDbTemplateTextMapper mapper,
       IResponseCreator responseCreator)

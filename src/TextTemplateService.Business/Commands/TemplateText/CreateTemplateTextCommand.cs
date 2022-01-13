@@ -21,16 +21,16 @@ namespace LT.DigitalOffice.TextTemplateService.Business.Commands.TemplateText
   {
     private readonly IAccessValidator _accessValidator;
     private readonly ICreateTemplateTextValidator _validator;
-    private readonly IDbTemplateTextMapper _mapper;
-    private readonly ITemplateTextRepository _repository;
+    private readonly IDbTextTemplateMapper _mapper;
+    private readonly ITextTemplateRepository _repository;
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly IResponseCreator _responseCreator;
 
     public CreateTemplateTextCommand(
       IAccessValidator accessValidator,
       ICreateTemplateTextValidator validator,
-      IDbTemplateTextMapper mapper,
-      ITemplateTextRepository repository,
+      IDbTextTemplateMapper mapper,
+      ITextTemplateRepository repository,
       IHttpContextAccessor httpContextAccessor,
       IResponseCreator responseCreator)
     {

@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LT.DigitalOffice.TextTemplateService.Data
 {
-  public class TemplateTextRepository : ITemplateTextRepository
+  public class TextTemplateRepository : ITextTemplateRepository
   {
     private readonly IDataProvider _provider;
 
-    public TemplateTextRepository(IDataProvider provider)
+    public TextTemplateRepository(IDataProvider provider)
     {
       _provider = provider;
     }

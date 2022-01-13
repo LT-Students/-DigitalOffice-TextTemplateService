@@ -54,7 +54,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
         columns: table => new
         {
           Id = table.Column<Guid>(nullable: false),
-          TextTemplateId = table.Column<Guid>(nullable: false),
+          TemplateId = table.Column<Guid>(nullable: false),
           EndpointId = table.Column<Guid>(nullable: false),
           IsActive = table.Column<bool>(nullable: false),
           CreatedBy = table.Column<Guid>(nullable: false),

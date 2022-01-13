@@ -5,7 +5,7 @@ using LT.DigitalOffice.TextTemplateService.Models.Dto.Requests.TemplateText;
 
 namespace LT.DigitalOffice.TextTemplateService.Mappers.Db
 {
-  public class DbTemplateTextMapper : IDbTemplateTextMapper
+  public class DbTextTemplateMapper : IDbTextTemplateMapper
   {
     public DbTextTemplate Map(TemplateTextRequest request, Guid? emailTemplateId = null)
     {

@@ -6,7 +6,7 @@ using LT.DigitalOffice.TextTemplateService.Models.Dto.Requests.TemplateText;
 namespace LT.DigitalOffice.TextTemplateService.Mappers.Db.Interfaces
 {
   [AutoInject]
-  public interface IDbTemplateTextMapper
+  public interface IDbTextTemplateMapper
   {
     DbTextTemplate Map(TemplateTextRequest request, Guid? emailTemplateId = null);
   }

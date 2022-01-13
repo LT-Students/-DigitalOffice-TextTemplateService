@@ -6,7 +6,7 @@ public class DbEndpointTextTemplate
   public const string TableName = "EndpointsTextTemplates";
 
   public Guid Id { get; set; }
-  public Guid TextTemplateId { get; set; }
+  public Guid TemplateId { get; set; }
   public Guid EndpointId { get; set; }
   public bool IsActive { get; set; }
   public Guid CreatedBy { get; set; }
