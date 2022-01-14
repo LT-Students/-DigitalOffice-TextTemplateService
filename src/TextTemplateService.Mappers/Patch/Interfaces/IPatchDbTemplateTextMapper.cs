@@ -8,7 +8,7 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Patch.Interfaces
   [AutoInject]
   public interface IPatchDbTemplateTextMapper
   {
-    JsonPatchDocument<DbTemplateText> Map(
+    JsonPatchDocument<DbTextTemplate> Map(
       JsonPatchDocument<EditTemplateTextRequest> request);
   }
 }

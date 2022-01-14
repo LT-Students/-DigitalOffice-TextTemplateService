@@ -11,11 +11,11 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Db
   public class DbTemplateMapper : IDbTemplateMapper
   {
     private readonly IHttpContextAccessor _httpContextAccessor;
-    private readonly IDbTemplateTextMapper _dbEmailTemplateTextMapper;
+    private readonly IDbTextTemplateMapper _dbEmailTemplateTextMapper;
 
     public DbTemplateMapper(
       IHttpContextAccessor httpContextAccessor,
-      IDbTemplateTextMapper dbEmailTemplateTextMapper)
+      IDbTextTemplateMapper dbEmailTemplateTextMapper)
     {
       _httpContextAccessor = httpContextAccessor;
       _dbEmailTemplateTextMapper = dbEmailTemplateTextMapper;
@@ -38,7 +38,7 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Db
         IsActive = true,
         CreatedAtUtc = DateTime.UtcNow,
         CreatedBy = _httpContextAccessor.HttpContext.GetUserId(),
-        TemplateTexts = request.TemplateTexts
+        TextsTemplates = request.TemplateTexts
           .Select(x => _dbEmailTemplateTextMapper.Map(x, templateId))
           .ToList()
       };

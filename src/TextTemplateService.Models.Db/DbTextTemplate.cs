@@ -4,25 +4,30 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace LT.DigitalOffice.TextTemplateService.Models.Db
 {
-  public class DbTemplateText
+  public class DbTextTemplate
   {
-    public const string TableName = "TemplateTexts";
+    public const string TableName = "TextsTemplates";
 
     public Guid Id { get; set; }
     public Guid TemplateId { get; set; }
     public string Subject { get; set; }
     public string Text { get; set; }
     public string Language { get; set; }
+    public bool IsActive { get; set; }
+    public Guid CreatedBy { get; set; }
+    public DateTime CreatedAtUtc { get; set; }
+    public Guid? ModifiedBy { get; set; }
+    public DateTime? ModifiedAtUtc { get; set; }
 
     public DbTemplate Template { get; set; }
   }
 
-  public class DbTemplateTextConfiguration : IEntityTypeConfiguration<DbTemplateText>
+  public class DbTextTemplateConfiguration : IEntityTypeConfiguration<DbTextTemplate>
   {
-    public void Configure(EntityTypeBuilder<DbTemplateText> builder)
+    public void Configure(EntityTypeBuilder<DbTextTemplate> builder)
     {
       builder
-        .ToTable(DbTemplateText.TableName);
+        .ToTable(DbTextTemplate.TableName);
 
       builder
         .HasKey(ett => ett.Id);
@@ -41,7 +46,7 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Db
 
       builder
         .HasOne(ett => ett.Template)
-        .WithMany(et => et.TemplateTexts);
+        .WithMany(et => et.TextsTemplates);
     }
   }
 }

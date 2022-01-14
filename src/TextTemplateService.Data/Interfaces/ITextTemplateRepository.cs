@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.JsonPatch;
 namespace LT.DigitalOffice.TextTemplateService.Data.Interfaces
 {
   [AutoInject]
-  public interface ITemplateTextRepository
+  public interface ITextTemplateRepository
   {
-    Task<Guid?> CreateAsync(DbTemplateText request);
+    Task<Guid?> CreateAsync(DbTextTemplate request);
 
-    Task<bool> EditAsync(Guid emailTemplateTextId, JsonPatchDocument<DbTemplateText> patch);
+    Task<bool> EditAsync(Guid emailTemplateTextId, JsonPatchDocument<DbTextTemplate> patch);
   }
 }

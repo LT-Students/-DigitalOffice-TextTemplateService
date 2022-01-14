@@ -8,7 +8,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef
   public class TextTemplateServiceDbContext : DbContext, IDataProvider
   {
     public DbSet<DbTemplate> Templates { get; set; }
-    public DbSet<DbTemplateText> TemplateTexts { get; set; }
+    public DbSet<DbTextTemplate> TextsTemplates { get; set; }
     public DbSet<DbKeyword> Keywords { get; set; }
 
     public TextTemplateServiceDbContext(DbContextOptions<TextTemplateServiceDbContext> options)

@@ -8,7 +8,7 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Patch
 {
   public class PatchDbTemplateTextMapper : IPatchDbTemplateTextMapper
   {
-    public JsonPatchDocument<DbTemplateText> Map(
+    public JsonPatchDocument<DbTextTemplate> Map(
       JsonPatchDocument<EditTemplateTextRequest> request)
     {
       if (request == null)
@@ -16,11 +16,11 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Patch
         return null;
       }
 
-      JsonPatchDocument<DbTemplateText> dbPatch = new();
+      JsonPatchDocument<DbTextTemplate> dbPatch = new();
 
       foreach (var item in request.Operations)
       {
-        dbPatch.Operations.Add(new Operation<DbTemplateText>(item.op, item.path, item.from, item.value));
+        dbPatch.Operations.Add(new Operation<DbTextTemplate>(item.op, item.path, item.from, item.value));
       }
 
       return dbPatch;
