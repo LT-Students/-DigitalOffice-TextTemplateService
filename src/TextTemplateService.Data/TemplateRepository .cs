@@ -65,14 +65,14 @@ namespace LT.DigitalOffice.TextTemplateService.Data
     public async Task<DbTemplate> GetAsync(Guid emailTemplateId)
     {
       return await _provider.Templates
-        .Include(et => et.TextTemplates)
+        .Include(et => et.TextsTemplates)
         .FirstOrDefaultAsync(et => et.Id == emailTemplateId);
     }
 
     public async Task<DbTemplate> GetAsync(int type)
     {
       return await _provider.Templates
-        .Include(et => et.TextTemplates)
+        .Include(et => et.TextsTemplates)
         .FirstOrDefaultAsync(et => et.Type == type && et.IsActive);
     }
 
@@ -89,7 +89,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data
         await dbEmailTemplates
           .Skip(filter.SkipCount)
           .Take(filter.TakeCount)
-          .Include(e => e.TextTemplates)
+          .Include(e => e.TextsTemplates)
           .ToListAsync(),
         await dbEmailTemplates.CountAsync());
     }

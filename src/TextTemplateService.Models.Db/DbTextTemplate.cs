@@ -6,7 +6,7 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Db
 {
   public class DbTextTemplate
   {
-    public const string TableName = "TextTemplates";
+    public const string TableName = "TextsTemplates";
 
     public Guid Id { get; set; }
     public Guid TemplateId { get; set; }
@@ -46,7 +46,7 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Db
 
       builder
         .HasOne(ett => ett.Template)
-        .WithMany(et => et.TextTemplates);
+        .WithMany(et => et.TextsTemplates);
     }
   }
 }

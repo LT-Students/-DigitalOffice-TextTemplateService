@@ -24,7 +24,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data
         return null;
       }
 
-      _provider.TextTemplates.Add(request);
+      _provider.TextsTemplates.Add(request);
       await _provider.SaveAsync();
 
       return request.Id;
@@ -37,7 +37,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data
         return false;
       }
 
-      DbTextTemplate dbEmailTemplateText = await _provider.TextTemplates
+      DbTextTemplate dbEmailTemplateText = await _provider.TextsTemplates
         .FirstOrDefaultAsync(et => et.Id == emailTemplateTextId);
 
       if (dbEmailTemplateText == null)

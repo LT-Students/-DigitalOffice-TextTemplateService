@@ -10,7 +10,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider
   public interface IDataProvider : IBaseDataProvider
   {
     DbSet<DbTemplate> Templates { get; set; }
-    DbSet<DbTextTemplate> TextTemplates { get; set; }
+    DbSet<DbTextTemplate> TextsTemplates { get; set; }
     DbSet<DbKeyword> Keywords { get; set; }
   }
 }

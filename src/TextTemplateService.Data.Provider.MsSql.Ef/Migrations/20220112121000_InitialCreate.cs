@@ -39,8 +39,8 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
           Text = table.Column<string>(nullable: false),
           Language = table.Column<string>(nullable: false, maxLength: 2),
           IsActive = table.Column<bool>(nullable: false),
-          CreatedBy = table.Column<Guid>(nullable: false),
-          CreatedAtUtc = table.Column<DateTime>(nullable: false),
+          CreatedBy = table.Column<Guid>(nullable: true),
+          CreatedAtUtc = table.Column<DateTime>(nullable: true),
           ModifiedBy = table.Column<Guid>(nullable: true),
           ModifiedAtUtc = table.Column<DateTime>(nullable: true)
         },

@@ -18,11 +18,11 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Db
     public Guid? ModifiedBy { get; set; }
     public DateTime? ModifiedAtUtc { get; set; }
 
-    public ICollection<DbTextTemplate> TextTemplates { get; set; }
+    public ICollection<DbTextTemplate> TextsTemplates { get; set; }
 
     public DbTemplate()
     {
-      TextTemplates = new HashSet<DbTextTemplate>();
+      TextsTemplates = new HashSet<DbTextTemplate>();
     }
   }
 
@@ -41,7 +41,7 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Db
         .IsRequired();
 
       builder
-        .HasMany(et => et.TextTemplates)
+        .HasMany(et => et.TextsTemplates)
         .WithOne(et => et.Template);
     }
   }
