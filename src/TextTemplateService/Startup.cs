@@ -218,9 +218,14 @@ namespace LT.DigitalOffice.TextTemplateService
           {
             ep.ConfigureConsumer<CreateKeywordsConsumer>(context);
           });
+          cfg.ReceiveEndpoint(_rabbitMqConfig.GetTextTemplateEndpoint, ep =>
+          {
+            ep.ConfigureConsumer<GetTextTemplateConsumer>(context);
+          });
         });
 
         x.AddConsumer<CreateKeywordsConsumer>();
+        x.AddConsumer<GetTextTemplateConsumer>();
 
         x.AddRequestClients(_rabbitMqConfig);
       });

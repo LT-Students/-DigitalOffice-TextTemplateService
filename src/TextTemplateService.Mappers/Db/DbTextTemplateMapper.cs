@@ -9,7 +9,7 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Db
   {
     public DbTextTemplate Map(TemplateTextRequest request, Guid? emailTemplateId = null)
     {
-      if (request == null)
+      if (request is null)
       {
         return null;
       }
@@ -20,7 +20,8 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Db
         TemplateId = emailTemplateId.HasValue ? emailTemplateId.Value : request.TemplateId.Value,
         Subject = request.Subject,
         Text = request.Text,
-        Language = request.Language
+        Locale = request.Language,
+        IsActive = true
       };
     }
   }

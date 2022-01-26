@@ -7,5 +7,6 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Dto.Configuration
   {
     public Dictionary<string, string> FindUserParseEntitiesEndpoint { get; set; }
     public string CreateKeywordsEndpoint { get; set; }
+    public string GetTextTemplateEndpoint { get; set; }
   }
 }

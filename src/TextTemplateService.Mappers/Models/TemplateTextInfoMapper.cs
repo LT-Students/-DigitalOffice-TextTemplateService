@@ -18,7 +18,7 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Models
         Id = dbEmailTemplateText.Id,
         Subject = dbEmailTemplateText.Subject,
         Text = dbEmailTemplateText.Text,
-        Language = dbEmailTemplateText.Language
+        Locale = dbEmailTemplateText.Locale
       };
     }
   }

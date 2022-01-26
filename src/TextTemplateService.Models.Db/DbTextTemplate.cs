@@ -12,7 +12,7 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Db
     public Guid TemplateId { get; set; }
     public string Subject { get; set; }
     public string Text { get; set; }
-    public string Language { get; set; }
+    public string Locale { get; set; }
     public bool IsActive { get; set; }
     public Guid CreatedBy { get; set; }
     public DateTime CreatedAtUtc { get; set; }
@@ -30,23 +30,23 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Db
         .ToTable(DbTextTemplate.TableName);
 
       builder
-        .HasKey(ett => ett.Id);
+        .HasKey(tt => tt.Id);
 
       builder
-        .Property(ett => ett.Subject)
+        .Property(tt => tt.Subject)
         .IsRequired();
 
       builder
-        .Property(ett => ett.Language)
+        .Property(tt => tt.Locale)
         .IsRequired();
 
       builder
-        .Property(ett => ett.Text)
+        .Property(tt => tt.Text)
         .IsRequired();
 
       builder
-        .HasOne(ett => ett.Template)
-        .WithMany(et => et.TextsTemplates);
+        .HasOne(tt => tt.Template)
+        .WithMany(t => t.TextsTemplates);
     }
   }
 }

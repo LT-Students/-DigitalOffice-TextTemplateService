@@ -12,5 +12,6 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider
     DbSet<DbTemplate> Templates { get; set; }
     DbSet<DbTextTemplate> TextsTemplates { get; set; }
     DbSet<DbKeyword> Keywords { get; set; }
+    DbSet<DbEndpointTemplate> EndpointsTemplates { get; set; }
   }
 }

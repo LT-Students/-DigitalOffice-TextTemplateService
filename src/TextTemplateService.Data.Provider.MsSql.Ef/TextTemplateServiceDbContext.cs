@@ -10,6 +10,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef
     public DbSet<DbTemplate> Templates { get; set; }
     public DbSet<DbTextTemplate> TextsTemplates { get; set; }
     public DbSet<DbKeyword> Keywords { get; set; }
+    public DbSet<DbEndpointTemplate> EndpointsTemplates { get; set; }
 
     public TextTemplateServiceDbContext(DbContextOptions<TextTemplateServiceDbContext> options)
     : base(options)

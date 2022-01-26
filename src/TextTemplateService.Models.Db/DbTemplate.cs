@@ -18,10 +18,12 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Db
     public Guid? ModifiedBy { get; set; }
     public DateTime? ModifiedAtUtc { get; set; }
 
+    public ICollection<DbEndpointTemplate> Endpoints { get; set; }
     public ICollection<DbTextTemplate> TextsTemplates { get; set; }
 
     public DbTemplate()
     {
+      Endpoints = new HashSet<DbEndpointTemplate>();
       TextsTemplates = new HashSet<DbTextTemplate>();
     }
   }
