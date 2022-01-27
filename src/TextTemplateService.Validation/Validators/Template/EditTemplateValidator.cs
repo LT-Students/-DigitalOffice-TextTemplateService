@@ -40,7 +40,7 @@ namespace LT.DigitalOffice.TextTemplateService.Validation.Validators.Template
         x => x == OperationType.Replace,
         new()
         {
-          { x => !string.IsNullOrEmpty(x.value?.ToString().Trim()), "Email template name must not be empty." },
+          { x => !string.IsNullOrEmpty(x.value?.ToString().Trim()), "Template name must not be empty." },
         });
 
       #endregion
@@ -52,7 +52,7 @@ namespace LT.DigitalOffice.TextTemplateService.Validation.Validators.Template
         x => x == OperationType.Replace,
         new()
         {
-          { x => Enum.TryParse(typeof(TemplateType), x.value.ToString(), true, out _), "Incorrect Email template type." },
+          { x => Enum.TryParse(typeof(TemplateType), x.value.ToString(), true, out _), "Incorrect template type." },
         });
 
       #endregion

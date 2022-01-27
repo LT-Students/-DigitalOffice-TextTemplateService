@@ -17,7 +17,7 @@ namespace LT.DigitalOffice.TextTemplateService.Validation.Validators.TemplateTex
       RuleFor(ett => ett.Text)
         .NotEmpty().WithMessage("Text must not be empty.");
 
-      RuleFor(ett => ett.Language)
+      RuleFor(ett => ett.Locale)
         .Cascade(CascadeMode.Stop)
         .NotEmpty().WithMessage("Language must not be empty.")
         .Must(ett => ett.Trim().Length == 2).WithMessage("Language must contain two letters.");

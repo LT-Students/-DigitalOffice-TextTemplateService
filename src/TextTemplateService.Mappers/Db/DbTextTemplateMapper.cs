@@ -20,7 +20,7 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Db
         TemplateId = emailTemplateId.HasValue ? emailTemplateId.Value : request.TemplateId.Value,
         Subject = request.Subject,
         Text = request.Text,
-        Locale = request.Language,
+        Locale = request.Locale,
         IsActive = true
       };
     }
