@@ -52,7 +52,7 @@ namespace LT.DigitalOffice.TextTemplateService.Validation.Validators.Template
         x => x == OperationType.Replace,
         new()
         {
-          { x => Enum.TryParse(typeof(EmailTemplateType), x.value.ToString(), true, out _), "Incorrect Email template type." },
+          { x => Enum.TryParse(typeof(TemplateType), x.value.ToString(), true, out _), "Incorrect Email template type." },
         });
 
       #endregion

@@ -25,7 +25,7 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Patch
         if (item.path.EndsWith(nameof(EditTemplateRequest.Type), StringComparison.OrdinalIgnoreCase))
         {
           dbPatch.Operations.Add(new Operation<DbTemplate>(
-            item.op, item.path, item.from, (int)Enum.Parse(typeof(EmailTemplateType), item.value.ToString())));
+            item.op, item.path, item.from, (int)Enum.Parse(typeof(TemplateType), item.value.ToString())));
           continue;
         }
         dbPatch.Operations.Add(new Operation<DbTemplate>(item.op, item.path, item.from, item.value));

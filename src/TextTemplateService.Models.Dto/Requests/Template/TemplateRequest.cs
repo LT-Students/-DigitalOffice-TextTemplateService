@@ -7,7 +7,7 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Dto.Requests.Template
   public record TemplateRequest
   {
     public string Name { get; set; }
-    public EmailTemplateType Type { get; set; }
+    public TemplateType Type { get; set; }
     public List<TemplateTextRequest> TemplateTexts { get; set; }
   }
 }
