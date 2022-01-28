@@ -37,7 +37,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
           TemplateId = table.Column<Guid>(nullable: false),
           Subject = table.Column<string>(nullable: false),
           Text = table.Column<string>(nullable: false),
-          Language = table.Column<string>(nullable: false, maxLength: 2),
+          Locale = table.Column<string>(nullable: false, maxLength: 2),
           IsActive = table.Column<bool>(nullable: false),
           CreatedBy = table.Column<Guid>(nullable: true),
           CreatedAtUtc = table.Column<DateTime>(nullable: true),
@@ -50,7 +50,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
         });
 
       builder.CreateTable(
-        name: DbEndpointTextTemplate.TableName,
+        name: DbEndpointTemplate.TableName,
         columns: table => new
         {
           Id = table.Column<Guid>(nullable: false),
@@ -64,7 +64,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
         },
         constraints: table =>
         {
-          table.PrimaryKey($"PK_{DbEndpointTextTemplate.TableName}", p => p.Id);
+          table.PrimaryKey($"PK_{DbEndpointTemplate.TableName}", p => p.Id);
         });
 
       builder.CreateTable(
@@ -90,7 +90,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
         name: DbTextTemplate.TableName);
 
       builder.DropTable(
-        name: DbEndpointTextTemplate.TableName);
+        name: DbEndpointTemplate.TableName);
 
       builder.DropTable(
         name: DbKeyword.TableName);

@@ -23,7 +23,7 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Db
 
     public DbTemplate Map(TemplateRequest request)
     {
-      if (request == null)
+      if (request is null)
       {
         return null;
       }

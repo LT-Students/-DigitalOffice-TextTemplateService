@@ -27,7 +27,7 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Models
       {
         Id = dbEmailTemplate.Id,
         Name = dbEmailTemplate.Name,
-        Type = (EmailTemplateType)dbEmailTemplate.Type,
+        Type = (TemplateType)dbEmailTemplate.Type,
         IsActive = dbEmailTemplate.IsActive,
         CreatedBy = dbEmailTemplate.CreatedBy,
         CreatedAtUtc = dbEmailTemplate.CreatedAtUtc,

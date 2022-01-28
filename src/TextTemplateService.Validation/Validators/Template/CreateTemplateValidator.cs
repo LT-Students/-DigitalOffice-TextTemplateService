@@ -12,7 +12,7 @@ namespace LT.DigitalOffice.TextTemplateService.Validation.Validators.Template
         .NotEmpty().WithMessage("Email template name must not be empty.");
 
       RuleFor(et => et.Type)
-        .IsInEnum().WithMessage("Incorrect Email template type.");
+        .IsInEnum().WithMessage("Incorrect template type.");
 
       RuleFor(et => et.TemplateTexts)
         .NotEmpty().WithMessage("Email template texts must not be empty.");
@@ -27,10 +27,10 @@ namespace LT.DigitalOffice.TextTemplateService.Validation.Validators.Template
           ett.RuleFor(ett => ett.Text)
             .NotEmpty().WithMessage("Text must not be empty.");
 
-          ett.RuleFor(ett => ett.Language)
+          ett.RuleFor(ett => ett.Locale)
             .Cascade(CascadeMode.Stop)
-            .NotEmpty().WithMessage("Language must not be empty.")
-            .Must(ett => ett.Trim().Length == 2).WithMessage("Language must contain two letters.");
+            .NotEmpty().WithMessage("Locale must not be empty.")
+            .Must(ett => ett.Trim().Length == 2).WithMessage("Locale must contain two letters.");
         });
     }
   }
