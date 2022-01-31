@@ -24,10 +24,10 @@ namespace LT.DigitalOffice.TextTemplateService.Controllers
     [HttpPatch("edit")]
     public async Task<OperationResultResponse<bool>> EditAsync(
       [FromServices] IEditTemplateCommand command,
-      [FromQuery] Guid emailTemplateId,
+      [FromQuery] Guid templateId,
       [FromBody] JsonPatchDocument<EditTemplateRequest> patch)
     {
-      return await command.ExecuteAsync(emailTemplateId, patch);
+      return await command.ExecuteAsync(templateId, patch);
     }
 
     [HttpGet("find")]

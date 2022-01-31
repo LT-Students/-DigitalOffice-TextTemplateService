@@ -23,10 +23,10 @@ namespace LT.DigitalOffice.TextTemplateService.Controllers
     [HttpPatch("edit")]
     public async Task<OperationResultResponse<bool>> EditAsync(
       [FromServices] IEditTemplateTextCommand command,
-      [FromQuery] Guid emailTemplateTextId,
+      [FromQuery] Guid templateTextId,
       [FromBody] JsonPatchDocument<EditTemplateTextRequest> patch)
     {
-      return await command.ExecuteAsync(emailTemplateTextId, patch);
+      return await command.ExecuteAsync(templateTextId, patch);
     }
   }
 }

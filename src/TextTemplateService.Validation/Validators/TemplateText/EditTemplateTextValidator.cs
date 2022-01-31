@@ -22,12 +22,12 @@ namespace LT.DigitalOffice.TextTemplateService.Validation.Validators.EmailTempla
         {
           nameof(EditTemplateTextRequest.Subject),
           nameof(EditTemplateTextRequest.Text),
-          nameof(EditTemplateTextRequest.Language)
+          nameof(EditTemplateTextRequest.Locale)
         });
 
       AddСorrectOperations(nameof(EditTemplateTextRequest.Subject), new List<OperationType> { OperationType.Replace });
       AddСorrectOperations(nameof(EditTemplateTextRequest.Text), new List<OperationType> { OperationType.Replace });
-      AddСorrectOperations(nameof(EditTemplateTextRequest.Language), new List<OperationType> { OperationType.Replace });
+      AddСorrectOperations(nameof(EditTemplateTextRequest.Locale), new List<OperationType> { OperationType.Replace });
 
       #endregion
 
@@ -58,7 +58,7 @@ namespace LT.DigitalOffice.TextTemplateService.Validation.Validators.EmailTempla
       #region Language
 
       AddFailureForPropertyIf(
-        nameof(EditTemplateTextRequest.Language),
+        nameof(EditTemplateTextRequest.Locale),
         x => x == OperationType.Replace,
         new()
         {
