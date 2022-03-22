@@ -18,7 +18,7 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Models
 
     public TemplateInfo Map(DbTemplate dbEmailTemplate)
     {
-      if (dbEmailTemplate == null)
+      if (dbEmailTemplate is null)
       {
         return null;
       }
@@ -26,7 +26,6 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Models
       return new TemplateInfo
       {
         Id = dbEmailTemplate.Id,
-        Name = dbEmailTemplate.Name,
         Type = (TemplateType)dbEmailTemplate.Type,
         IsActive = dbEmailTemplate.IsActive,
         CreatedBy = dbEmailTemplate.CreatedBy,

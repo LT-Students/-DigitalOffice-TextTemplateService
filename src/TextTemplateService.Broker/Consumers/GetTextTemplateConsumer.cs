@@ -17,9 +17,9 @@ namespace LT.DigitalOffice.TextTemplateService.Broker.Consumers
 
     private async Task<object> GetTemplate(IGetTextTemplateRequest request)
     {
-      DbTemplate dbTemplate =
-        await _endpointTemplateRepository.GetAsync(request.EndpointId)
-        ?? await _templateRepository.GetAsync((int)request.TemplateType);
+      DbTemplate dbTemplate = request.EndpointId.HasValue
+        ? await _endpointTemplateRepository.GetAsync(request.EndpointId.Value)
+        : await _templateRepository.GetAsync((int)request.TemplateType);
 
       DbTextTemplate dbTextTemplate = 
         dbTemplate.TextsTemplates.FirstOrDefault(tt => tt.Locale == request.Locale && tt.IsActive)

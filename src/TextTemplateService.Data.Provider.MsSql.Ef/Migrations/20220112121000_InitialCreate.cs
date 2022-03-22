@@ -16,7 +16,6 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
         columns: table => new
         {
           Id = table.Column<Guid>(nullable: false),
-          Name = table.Column<string>(nullable: false),
           Type = table.Column<int>(nullable: false),
           IsActive = table.Column<bool>(nullable: false),
           CreatedBy = table.Column<Guid>(nullable: true),
@@ -35,6 +34,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
         {
           Id = table.Column<Guid>(nullable: false),
           TemplateId = table.Column<Guid>(nullable: false),
+          Name = table.Column<string>(nullable: true),
           Subject = table.Column<string>(nullable: false),
           Text = table.Column<string>(nullable: false),
           Locale = table.Column<string>(nullable: false, maxLength: 2),
@@ -57,8 +57,8 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
           TemplateId = table.Column<Guid>(nullable: false),
           EndpointId = table.Column<Guid>(nullable: false),
           IsActive = table.Column<bool>(nullable: false),
-          CreatedBy = table.Column<Guid>(nullable: false),
-          CreatedAtUtc = table.Column<DateTime>(nullable: false),
+          CreatedBy = table.Column<Guid>(nullable: true),
+          CreatedAtUtc = table.Column<DateTime>(nullable: true),
           ModifiedBy = table.Column<Guid>(nullable: true),
           ModifiedAtUtc = table.Column<DateTime>(nullable: true)
         },

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LT.DigitalOffice.Kernel.BrokerSupport.Broker;
-using LT.DigitalOffice.Models.Broker.Models.TextTemplate;
-using LT.DigitalOffice.Models.Broker.Requests.TextTemplate;
+using LT.DigitalOffice.Kernel.EndpointSupport.Broker.Models.TextTemplate;
+using LT.DigitalOffice.Kernel.EndpointSupport.Broker.Models.TextTemplate.Models;
 using LT.DigitalOffice.TextTemplateService.Data.Interfaces;
 using LT.DigitalOffice.TextTemplateService.Mappers.Db.Interfaces;
 using LT.DigitalOffice.TextTemplateService.Models.Db;
@@ -35,7 +35,7 @@ namespace LT.DigitalOffice.TextTemplateService.Broker.Consumers
         newEndpointKeywords = savedEndpointKeywords.Any()
           ? requestEndpointKeywords.Keywords.Where(k => !savedEndpointKeywords.Select(dbk => dbk.Keyword).Contains(k)).ToList()
           : requestEndpointKeywords.Keywords;
-        
+
         if (newEndpointKeywords.Any())
         {
           newDbKeywords.AddRange(_mapper.Map(requestEndpointKeywords.EndpointId, newEndpointKeywords));

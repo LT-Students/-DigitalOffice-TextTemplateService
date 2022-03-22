@@ -33,7 +33,6 @@ namespace LT.DigitalOffice.TextTemplateService.Mappers.Db
       return new DbTemplate
       {
         Id = templateId,
-        Name = request.Name,
         Type = (int)request.Type,
         IsActive = true,
         CreatedAtUtc = DateTime.UtcNow,

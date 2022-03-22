@@ -10,11 +10,10 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Db
     public const string TableName = "Templates";
 
     public Guid Id { get; set; }
-    public string Name { get; set; }
     public int Type { get; set; }
     public bool IsActive { get; set; }
-    public Guid CreatedBy { get; set; }
-    public DateTime CreatedAtUtc { get; set; }
+    public Guid? CreatedBy { get; set; }
+    public DateTime? CreatedAtUtc { get; set; }
     public Guid? ModifiedBy { get; set; }
     public DateTime? ModifiedAtUtc { get; set; }
 
@@ -37,10 +36,6 @@ namespace LT.DigitalOffice.TextTemplateService.Models.Db
 
       builder
         .HasKey(et => et.Id);
-
-      builder
-        .Property(et => et.Name)
-        .IsRequired();
 
       builder
         .HasMany(et => et.TextsTemplates)
