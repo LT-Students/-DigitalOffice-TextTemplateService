@@ -97,7 +97,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Greeting",
             "Hello {[FirstName]} {[LastName]}!\n"
             + "This is an email for registration. If you did not leave a request, please ignore this message.\n"
-            + "Follow this link: https://dev.ltdo.xyz/auth/firstlogin?userId={[Id]}\nLogin: You will need to come up with a new login for your profile. "
+            + "Follow this link: https://dev.ltdo.xyz/auth/signup?userId={[Id]}\nLogin: You will need to come up with a new login for your profile. "
             + "You can use it in the future to log in to the system. Password: {[Password]}",
             en,
             true
@@ -109,7 +109,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Приглашение",
             "Здравствуйте, {[FirstName]} {[LastName]}!\n"
             + "Это письмо для прохождения регистрации. Если вы не оставляли заявку, проигнорируйте это сообщение.\n"
-            + "Перейдите по этой ссылке: https://dev.ltdo.xyz/auth/firstlogin?userId={[Id]}\nЛогин: Вам будет необходимо придумать и ввести новый логин. "
+            + "Перейдите по этой ссылке: https://dev.ltdo.xyz/auth/signup?userId={[Id]}\nЛогин: Вам будет необходимо придумать и ввести новый логин. "
             + "Он в будущем понадобится вам для входа. Пароль: {[Password]}",
             ru,
             true
