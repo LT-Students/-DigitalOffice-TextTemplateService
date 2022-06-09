@@ -22,8 +22,8 @@ namespace LT.DigitalOffice.TextTemplateService.Broker.Consumers
         : await _templateRepository.GetAsync((int)request.TemplateType);
 
       DbTextTemplate dbTextTemplate = 
-        dbTemplate.TextsTemplates.FirstOrDefault(tt => tt.Locale == request.Locale && tt.IsActive)
-        ?? dbTemplate.TextsTemplates.FirstOrDefault(tt => tt.IsActive);
+        dbTemplate?.TextsTemplates?.FirstOrDefault(tt => tt.Locale == request.Locale && tt.IsActive)
+        ?? dbTemplate?.TextsTemplates?.FirstOrDefault(tt => tt.IsActive);
 
       return dbTextTemplate is null
         ? null

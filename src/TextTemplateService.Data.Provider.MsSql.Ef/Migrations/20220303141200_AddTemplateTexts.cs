@@ -39,7 +39,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
           { PasswordRecoveryTemplate, (int)TemplateType.PasswordRecovery, true},
           { GreetingTemplate, (int)TemplateType.Greeting, true},
           { MailConfirmationTemplate, (int)TemplateType.ConfirmСommunication, true},
-          { UserRecoveryTemplate, (int)TemplateType.Notification, true}
+          { UserRecoveryTemplate, (int)TemplateType.UserRecovery, true}
         });
 
       migrationBuilder.InsertData(
