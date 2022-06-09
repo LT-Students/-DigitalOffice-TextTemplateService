@@ -142,8 +142,8 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "User recovery",
             "User recovery",
             "Hello {[FirstName]} {[LastName]}!\n"
-            + "This is an email for registration. If you did not leave a request, please ignore this message.\n"
-            + "Follow this link: https://dev.ltdo.xyz/auth/firstlogin?userId={[Id]}\nPassword: {[Password]}",
+            + "This is an email to recover your account. If you did not leave a request, please ignore this message.\n"
+            + "Follow this link: https://dev.ltdo.xyz/auth/reactivate?userId={[Id]}\nPassword: {[Password]}",
             en,
             true
           },
@@ -153,8 +153,8 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Восстановление пользователя",
             "Восстановление пользователя",
             "Здравствуйте, {[FirstName]} {[LastName]}!\n"
-            + "Это письмо для прохождения регистрации. Если вы не оставляли заявку, проигнорируйте это сообщение.\n"
-            + "Перейдите по этой ссылке: https://dev.ltdo.xyz/auth/firstlogin?userId={[Id]}\nПароль: {[Password]}",
+            + "Это письмо для восстановления вашей учетной записи. Если вы не оставляли заявку, проигнорируйте это сообщение.\n"
+            + "Перейдите по этой ссылке: https://dev.ltdo.xyz/auth/reactivate?userId={[Id]}\nПароль: {[Password]}",
             ru,
             true
           }
