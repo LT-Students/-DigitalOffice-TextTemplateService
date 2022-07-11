@@ -167,7 +167,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "SMTP settings check",
             "Hello!\n"
             + "This email address was specified as the administrator's email address to receive the SMTP check's message.\n"
-            + "If you havn't submitted a request, ignore this message, please.\n"
+            + "If you haven't submitted a request, ignore this message, please.\n"
             + "Your code is {[Code]}, enter it in application.",
             en,
             true
