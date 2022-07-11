@@ -13,6 +13,7 @@ using LT.DigitalOffice.TextTemplateService.Data.Interfaces;
 using LT.DigitalOffice.TextTemplateService.Mappers.Patch.Interfaces;
 using LT.DigitalOffice.TextTemplateService.Models.Dto.Requests.Template;
 using LT.DigitalOffice.TextTemplateService.Validation.Validators.Template.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 
 namespace LT.DigitalOffice.TextTemplateService.Business.Commands.Template
@@ -43,7 +44,7 @@ namespace LT.DigitalOffice.TextTemplateService.Business.Commands.Template
       Guid emailTemplateId,
       JsonPatchDocument<EditTemplateRequest> patch)
     {
-      if (!await _accessValidator.HasRightsAsync(Rights.AddEditRemoveEmailTemplates))
+      if (!await _accessValidator.HasRightsAsync(Rights.AddEditRemoveEmailsTemplates))
       {
         return _responseCreator.CreateFailureResponse<bool>(HttpStatusCode.Forbidden);
       }
@@ -56,8 +57,6 @@ namespace LT.DigitalOffice.TextTemplateService.Business.Commands.Template
       OperationResultResponse<bool> response = new();
 
       response.Body = await _repository.EditAsync(emailTemplateId, _mapper.Map(patch));
-
-      response.Status = OperationResultStatusType.FullSuccess;
 
       if (!response.Body)
       {

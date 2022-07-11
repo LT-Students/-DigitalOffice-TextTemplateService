@@ -44,7 +44,7 @@ namespace LT.DigitalOffice.TextTemplateService.Business.Commands.Template
 
     public async Task<OperationResultResponse<Guid?>> ExecuteAsync(TemplateRequest request)
     {
-      if (!await _accessValidator.HasRightsAsync(Rights.AddEditRemoveEmailTemplates))
+      if (!await _accessValidator.HasRightsAsync(Rights.AddEditRemoveEmailsTemplates))
       {
         return _responseCreator.CreateFailureResponse<Guid?>(HttpStatusCode.Forbidden);
       }
@@ -57,7 +57,6 @@ namespace LT.DigitalOffice.TextTemplateService.Business.Commands.Template
       OperationResultResponse<Guid?> response = new();
 
       response.Body = await _repository.CreateAsync(_mapper.Map(request));
-      response.Status = OperationResultStatusType.FullSuccess;
 
       _httpContextAccessor.HttpContext.Response.StatusCode = (int)HttpStatusCode.Created;
 
