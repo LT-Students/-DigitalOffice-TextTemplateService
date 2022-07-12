@@ -4,7 +4,6 @@ using System.Net;
 using System.Threading.Tasks;
 using LT.DigitalOffice.Kernel.BrokerSupport.AccessValidatorEngine.Interfaces;
 using LT.DigitalOffice.Kernel.Constants;
-using LT.DigitalOffice.Kernel.Enums;
 using LT.DigitalOffice.Kernel.FluentValidationExtensions;
 using LT.DigitalOffice.Kernel.Helpers.Interfaces;
 using LT.DigitalOffice.Kernel.Responses;
@@ -13,7 +12,6 @@ using LT.DigitalOffice.TextTemplateService.Data.Interfaces;
 using LT.DigitalOffice.TextTemplateService.Mappers.Patch.Interfaces;
 using LT.DigitalOffice.TextTemplateService.Models.Dto.Requests.Template;
 using LT.DigitalOffice.TextTemplateService.Validation.Validators.Template.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 
 namespace LT.DigitalOffice.TextTemplateService.Business.Commands.Template
