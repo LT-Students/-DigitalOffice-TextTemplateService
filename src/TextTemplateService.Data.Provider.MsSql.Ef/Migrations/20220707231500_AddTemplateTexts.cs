@@ -168,7 +168,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Hello!\n"
             + "This email address was specified as the administrator's email address to receive the SMTP check's message.\n"
             + "If you haven't submitted a request, please ignore this message.\n"
-            + "Your code is {[Code]}, enter it in application.",
+            + "Receiving this message means that the SMTP check was successful.",
             en,
             true
           },
@@ -180,7 +180,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Здравствуйте!\n"
             + "Ваша электронная почта была указана как электронная почта администратора для проверки настроек SMTP.\n"
             + "Если Вы не отправляли запрос, пожалуйста, проигнорируйте это сообщение.\n"
-            + "Ваш код: {[Code]}, введите его в приложении.",
+            + "Получение Вами этого письма означает, что проверка настроек SMTP пройдена успешно.",
             ru,
             true
           }
