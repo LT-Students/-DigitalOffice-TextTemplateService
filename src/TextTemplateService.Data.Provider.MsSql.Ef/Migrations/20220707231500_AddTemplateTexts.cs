@@ -124,7 +124,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Mail confirmation",
             "Mail confirmation",
             "Hello {[FirstName]} {[LastName]}!\n"
-            + "This is an email for confirming adding a new email to your profile. If you did not leave a request, please ignore this message.\n"
+            + "This is an email for confirming adding a new email to your profile.\nIf you did not leave a request, please ignore this message.\n"
             + "Follow this link: https://dev.ltdo.xyz/users/{[Id]}?secret={[Secret]}&communicationId={[CommunicationId]}\nThis link will be active for 30 minutes",
             en,
             true
@@ -134,8 +134,8 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             MailConfirmationTemplate,
             "Подтверждение электронной почты",
             "Подтверждение электронной почты",
-            "Здравствуйте, {[FirstName]} {[LastName]}!\n"
-            + "Это письмо для подтверждения добавления в профиль новой электронной почты. Если заявка не от тебя, проигнорируй это сообщение.\n"
+            "Здравствуй, {[FirstName]} {[LastName]}!\n"
+            + "Это письмо для подтверждения добавления в профиль новой электронной почты.\nЕсли заявка не от тебя, проигнорируй это сообщение.\n"
             + "Перейди по этой ссылке: https://dev.ltdo.xyz/users/{[Id]}?secret={[Secret]}&communicationId={[CommunicationId]}\nСсылка будет активна в течение 30 минут.",
             ru,
             true
