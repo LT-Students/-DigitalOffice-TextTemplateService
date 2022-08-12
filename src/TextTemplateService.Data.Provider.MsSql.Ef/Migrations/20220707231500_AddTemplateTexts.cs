@@ -82,7 +82,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             true
           },
           {
-            Guid.NewGuid(),
+        Guid.NewGuid(),
             PasswordRecoveryTemplate,
             "Восстановление пароля",
             "Восстановление пароля",
@@ -125,7 +125,8 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Mail confirmation",
             "Hello {[FirstName]} {[LastName]}!\n"
             + "This is an email for confirming adding a new email to your profile.\nIf you did not leave a request, please ignore this message.\n"
-            + "Follow this link: https://dev.ltdo.xyz/users/{[Id]}?secret={[Secret]}&communicationId={[CommunicationId]}\nThis link will be active for 30 minutes",
+            + "To confirm an email follow this link: https://dev.ltdo.xyz/users/{[Id]}?secret={[Secret]}&communicationId={[CommunicationId]}\n"
+            + "This link will be active for 30 minutes",
             en,
             true
           },
@@ -134,9 +135,10 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             MailConfirmationTemplate,
             "Подтверждение электронной почты",
             "Подтверждение электронной почты",
-            "Здравствуй, {[FirstName]} {[LastName]}!\n"
-            + "Это письмо для подтверждения добавления в профиль новой электронной почты.\nЕсли заявка не от тебя, проигнорируй это сообщение.\n"
-            + "Перейди по этой ссылке: https://dev.ltdo.xyz/users/{[Id]}?secret={[Secret]}&communicationId={[CommunicationId]}\nСсылка будет активна в течение 30 минут.",
+            "Здравствуйте, {[FirstName]} {[LastName]}!\n"
+            + "Это письмо для подтверждения добавления в профиль новой электронной почты.\nЕсли вы не оставляли заявку, пожалуйста, проигнорируйте это сообщение.\n"
+            + "Для подтверждения адреса электронной почты пройдите по этой ссылке: https://dev.ltdo.xyz/users/{[Id]}?secret={[Secret]}&communicationId={[CommunicationId]}\n"
+            + "Ссылка будет активна в течение 30 минут.",
             ru,
             true
           },
@@ -152,7 +154,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             true
           },
           {
-            Guid.NewGuid(),
+        Guid.NewGuid(),
             UserRecoveryTemplate,
             "Восстановление пользователя",
             "Восстановление пользователя",
