@@ -82,7 +82,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             true
           },
           {
-        Guid.NewGuid(),
+            Guid.NewGuid(),
             PasswordRecoveryTemplate,
             "Восстановление пароля",
             "Восстановление пароля",
@@ -154,7 +154,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             true
           },
           {
-        Guid.NewGuid(),
+            Guid.NewGuid(),
             UserRecoveryTemplate,
             "Восстановление пользователя",
             "Восстановление пользователя",
