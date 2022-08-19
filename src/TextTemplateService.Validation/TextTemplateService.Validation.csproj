@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="$(ProjectDir)..\..\Common.Configurations.targets" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\TextTemplateService.Broker\TextTemplateService.Broker.csproj" />
+    <ProjectReference Include="..\TextTemplateService.Data\TextTemplateService.Data.csproj" />
+    <ProjectReference Include="..\TextTemplateService.Models.Dto\TextTemplateService.Models.Dto.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="$(ProjectDir)..\..\Common.Configurations.targets" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\TextTemplateService.Data\TextTemplateService.Data.csproj" />
+    <ProjectReference Include="..\TextTemplateService.Mappers\TextTemplateService.Mappers.csproj" />
+  </ItemGroup>
+	
+</Project>

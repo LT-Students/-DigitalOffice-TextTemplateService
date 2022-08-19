@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="$(ProjectDir)..\..\Common.Configurations.targets" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\TextTemplateService.Models.Db\TextTemplateService.Models.Db.csproj" />
+    <ProjectReference Include="..\TextTemplateService.Models.Dto\TextTemplateService.Models.Dto.csproj" />
+  </ItemGroup>
+
+</Project>
