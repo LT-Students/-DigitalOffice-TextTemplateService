@@ -75,7 +75,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Password recovery",
             "Hello {[FirstName]} {[LastName]}!\n"
             + "This is an email for resetting the password to your account.\nIf you did not leave a request, please ignore this message.\n"
-            + "Follow this link: https://dev.ltdo.xyz/auth/reset?userId={[Id]}\n"
+            + "Follow this link: https://ltdo.xyz/auth/reset?userId={[Id]}\n"
             + "In the first 30 minutes from the moment you got this letter you will need to enter this code to reset your password: {[Password]}\n"
             + "If you didn’t do it during this time — send a new request to reset your password.",
             en,
@@ -88,7 +88,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Восстановление пароля",
             "Здравствуйте, {[FirstName]} {[LastName]}!\n"
             + "Это письмо для смены пароля к учетной записи в системе.\nЕсли вы не оставляли заявку, проигнорируйте это сообщение.\n"
-            + "Перейдите по этой ссылке: https://dev.ltdo.xyz/auth/reset?userId={[Id]}\n"
+            + "Перейдите по этой ссылке: https://ltdo.xyz/auth/reset?userId={[Id]}\n"
             + "Вам будет необходимо в течение 30 минут от момента получения этого письма ввести код для смены пароля: {[Password]}\n"
             + "Если вы не успели этого сделать, отправьте новую заявку на сброс пароля.",
             ru,
@@ -101,7 +101,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Greeting",
             "Hello {[FirstName]} {[LastName]}!\n"
             + "This is an email for registration.\nIf you did not leave a request, please ignore this message.\n"
-            + "Follow this link: https://dev.ltdo.xyz/auth/signup?userId={[Id]}\nLogin: You will need to come up with a new login for your profile. "
+            + "Follow this link: https://ltdo.xyz/auth/signup?userId={[Id]}\nLogin: You will need to come up with a new login for your profile. "
             + "You can use it in the future to log in to the system.\nPassword: {[Password]}",
             en,
             true
@@ -113,7 +113,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Приглашение",
             "Здравствуйте, {[FirstName]} {[LastName]}!\n"
             + "Это письмо для прохождения регистрации.\nЕсли вы не оставляли заявку, проигнорируйте это сообщение.\n"
-            + "Перейдите по этой ссылке: https://dev.ltdo.xyz/auth/signup?userId={[Id]}\nЛогин: Вам будет необходимо придумать и ввести новый логин. "
+            + "Перейдите по этой ссылке: https://ltdo.xyz/auth/signup?userId={[Id]}\nЛогин: Вам будет необходимо придумать и ввести новый логин. "
             + "Он в будущем понадобится вам для входа.\nПароль: {[Password]}",
             ru,
             true
@@ -125,7 +125,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Mail confirmation",
             "Hello {[FirstName]} {[LastName]}!\n"
             + "This is an email for confirming adding a new email to your profile.\nIf you did not leave a request, please ignore this message.\n"
-            + "To confirm an email follow this link: https://dev.ltdo.xyz/users/{[Id]}?secret={[Secret]}&communicationId={[CommunicationId]}\n"
+            + "To confirm an email follow this link: https://ltdo.xyz/users/{[Id]}?secret={[Secret]}&communicationId={[CommunicationId]}\n"
             + "This link will be active for 30 minutes",
             en,
             true
@@ -137,7 +137,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Подтверждение электронной почты",
             "Здравствуйте, {[FirstName]} {[LastName]}!\n"
             + "Это письмо для подтверждения добавления в профиль новой электронной почты.\nЕсли вы не оставляли заявку, пожалуйста, проигнорируйте это сообщение.\n"
-            + "Для подтверждения адреса электронной почты пройдите по этой ссылке: https://dev.ltdo.xyz/users/{[Id]}?secret={[Secret]}&communicationId={[CommunicationId]}\n"
+            + "Для подтверждения адреса электронной почты пройдите по этой ссылке: https://ltdo.xyz/users/{[Id]}?secret={[Secret]}&communicationId={[CommunicationId]}\n"
             + "Ссылка будет активна в течение 30 минут.",
             ru,
             true
@@ -149,7 +149,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "User recovery",
             "Hello {[FirstName]} {[LastName]}!\n"
             + "This is an email to recover your account.\nIf you have not submitted a request, please ignore this message.\n"
-            + "Follow this link: https://dev.ltdo.xyz/auth/reactivate?userId={[Id]}\nPassword: {[Password]}",
+            + "Follow this link: https://ltdo.xyz/auth/reactivate?userId={[Id]}\nPassword: {[Password]}",
             en,
             true
           },
@@ -160,7 +160,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Восстановление пользователя",
             "Здравствуйте, {[FirstName]} {[LastName]}!\n"
             + "Это письмо для восстановления вашей учетной записи.\nЕсли вы не оставляли заявку, проигнорируйте это сообщение.\n"
-            + "Перейдите по этой ссылке: https://dev.ltdo.xyz/auth/reactivate?userId={[Id]}\nПароль: {[Password]}",
+            + "Перейдите по этой ссылке: https://ltdo.xyz/auth/reactivate?userId={[Id]}\nПароль: {[Password]}",
             ru,
             true
           },
