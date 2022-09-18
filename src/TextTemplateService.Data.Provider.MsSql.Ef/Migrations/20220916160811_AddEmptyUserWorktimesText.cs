@@ -15,6 +15,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
       Guid EmptyUserWorktimesTemplate = Guid.NewGuid();
 
       const string ru = "ru";
+      const string en = "en";
 
       migrationBuilder.InsertData(
         table: DbTemplate.TableName,
@@ -58,7 +59,18 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
           "bit"
         },
         values: new object[,]
-        {
+        {                    {
+            Guid.NewGuid(),
+            EmptyUserWorktimesTemplate,
+            "Reminder for employees to enter hours",
+            "Reminder for employees to enter hours",
+            "Hello {[FirstName]} {[LastName]}!\n"
+            + "Don't forget to enter your business hours from {[FirstLastMonth]} to {[LastLastMonth]} "
+            + "to {[LastCurrentMonth]} "
+            + "on the time tracking page: https://ltdo.xyz/time",
+            en,
+            true
+          },
           {
             Guid.NewGuid(),
             EmptyUserWorktimesTemplate,
