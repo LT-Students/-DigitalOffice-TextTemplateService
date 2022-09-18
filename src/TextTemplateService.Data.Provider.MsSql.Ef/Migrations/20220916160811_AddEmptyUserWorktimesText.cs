@@ -59,7 +59,8 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
           "bit"
         },
         values: new object[,]
-        {                    {
+        {
+          {
             Guid.NewGuid(),
             EmptyUserWorktimesTemplate,
             "Reminder for employees to enter hours",
