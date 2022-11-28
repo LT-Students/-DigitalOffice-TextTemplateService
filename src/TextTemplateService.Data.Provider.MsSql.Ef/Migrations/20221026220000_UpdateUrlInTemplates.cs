@@ -1,7 +1,4 @@
-﻿using System;
-using LT.DigitalOffice.Models.Broker.Enums;
-using LT.DigitalOffice.TextTemplateService.Models.Db;
-using Microsoft.EntityFrameworkCore.Infrastructure;
+﻿using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations;
