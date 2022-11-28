@@ -68,7 +68,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Hello {[FirstName]} {[LastName]}!\n"
             + "Don't forget to enter your business hours from {[FirstLastMonth]} to {[LastLastMonth]} "
             + "to {[LastCurrentMonth]} "
-            + "on the time tracking page: https://ltdo.xyz/time",
+            + "on the time tracking page: https://dev.ltdo.xyz/time",
             en,
             true
           },
@@ -80,7 +80,7 @@ namespace LT.DigitalOffice.TextTemplateService.Data.Provider.MsSql.Ef.Migrations
             "Здравствуйте, {[FirstName]} {[LastName]}!\n"
             + "Не забудьте внести свои рабочие часы с {[FirstLastMonth]} по {[LastLastMonth]} "
             + "до {[LastCurrentMonth]} "
-            + "на странице учёта времени: https://ltdo.xyz/time",
+            + "на странице учёта времени: https://dev.ltdo.xyz/time",
             ru,
             true
           }
